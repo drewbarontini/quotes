@@ -38,7 +38,7 @@ blockquote {
   top: 50%;
   transform: translate(-50%, 300%);
   transition: 1s ease-in-out;
-  width: 400px;
+  width: 600px;
 }
 
 .quote.is-active {
@@ -51,7 +51,7 @@ blockquote {
 }
 
 .quote-content {
-  font-size: 225%;
+  font-size: 325%;
   margin-bottom: 0.625em;
 }
 
