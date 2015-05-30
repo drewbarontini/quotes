@@ -41,5 +41,5 @@ gulp.task( 'default', [ 'browserify' ] );
 // -------------------------------------
 
 gulp.task( 'watch', function() {
-  gulp.watch( 'src/app.js', [ 'default' ] );
+  gulp.watch( 'src/*.js', [ 'default' ] );
 } );

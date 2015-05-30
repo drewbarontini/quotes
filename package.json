@@ -9,6 +9,7 @@
   "author": "Drew Barontini",
   "license": "ISC",
   "devDependencies": {
+    "MD5": "^1.2.2",
     "browserify": "^10.2.3",
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1",
