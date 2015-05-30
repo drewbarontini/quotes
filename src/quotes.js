@@ -8,7 +8,7 @@
 //   Requires
 // -------------------------------------
 
-var Quote = require( './Quote' );
+var Quote   = require( './Quote' );
 
 // -------------------------------------
 //   Base
@@ -62,10 +62,27 @@ var Quotes = React.createClass({
     this._getNextQuote();
   },
 
+  // ----- Get JSON ----- //
+
+  _getJSON: function( url, fn ) {
+    var request = new XMLHttpRequest();
+    var data    = null;
+    request.open( 'GET', url, true );
+
+    request.onload = function() {
+      if ( request.status >= 200 && request.status < 400 ) {
+        data = JSON.parse( request.responseText );
+       fn( data );
+      }
+    };
+
+    request.send();
+  },
+
   // ----- Load Stories From Server ----- //
 
   _loadStoriesFromServer: function() {
-    $.getJSON( this.props.url, function( data ) {
+    this._getJSON( this.props.url, function( data ) {
       if ( this.isMounted() ) {
         this.setState({ data: data, quotes: data });
         this._getNextQuote();
