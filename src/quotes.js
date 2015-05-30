@@ -36,7 +36,7 @@ var Quotes = React.createClass({
       this.setState({ cName: 'is-last-active' });
 
       setTimeout( function() {
-        this._loadStoriesFromServer();
+        this._loadQuotesFromServer();
       }.bind( this ), 1000 );
     }
   },
@@ -79,9 +79,9 @@ var Quotes = React.createClass({
     request.send();
   },
 
-  // ----- Load Stories From Server ----- //
+  // ----- Load Quotes From Server ----- //
 
-  _loadStoriesFromServer: function() {
+  _loadQuotesFromServer: function() {
     this._getJSON( this.props.url, function( data ) {
       if ( this.isMounted() ) {
         this.setState({ data: data, quotes: data });
@@ -93,7 +93,7 @@ var Quotes = React.createClass({
   // ----- Component Did Mount ----- //
 
   componentDidMount: function() {
-    this._loadStoriesFromServer();
+    this._loadQuotesFromServer();
   },
 
   // ----- Render ----- //
