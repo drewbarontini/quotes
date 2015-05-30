@@ -16,9 +16,7 @@ var Gravatar = require( './Gravatar' );
 
 var Quote = React.createClass({
 
-  // -------------------------------------
-  //   Render
-  // -------------------------------------
+  // ----- Render ----- //
 
   render: function() {
 

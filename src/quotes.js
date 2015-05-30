@@ -16,17 +16,13 @@ var Quote = require( './Quote' );
 
 var Quotes = React.createClass({
 
-  // -------------------------------------
-  //   Get Initial State
-  // -------------------------------------
+  // ----- Get Initial State ----- //
 
   getInitialState: function() {
     return { data: [] };
   },
 
-  // -------------------------------------
-  //   Get Next Quote
-  // -------------------------------------
+  // ----- Get Next Quote ----- //
 
   _getNextQuote: function() {
     if ( this.state.quotes.length > 0 ) {
@@ -45,9 +41,7 @@ var Quotes = React.createClass({
     }
   },
 
-  // -------------------------------------
-  //   Load Next Quote
-  // -------------------------------------
+  // ----- Load Next Quote ----- //
 
   _loadNextQuote: function( nextQuote ) {
     this.setState({ cName: '', data: nextQuote });
@@ -61,18 +55,14 @@ var Quotes = React.createClass({
     }.bind( this ), 5000 );
   },
 
-  // -------------------------------------
-  //   Hide Last Quote
-  // -------------------------------------
+  // ----- Hide Last Quote ----- //
 
   _hideLastQuote: function( lastQuote ) {
     this.setState({ cName: 'is-last-active', data: lastQuote });
     this._getNextQuote();
   },
 
-  // -------------------------------------
-  //   Load Stories From Server
-  // -------------------------------------
+  // ----- Load Stories From Server ----- //
 
   _loadStoriesFromServer: function() {
     $.getJSON( this.props.url, function( data ) {
@@ -83,17 +73,13 @@ var Quotes = React.createClass({
     }.bind( this ) );
   },
 
-  // -------------------------------------
-  //   Component Did Mount
-  // -------------------------------------
+  // ----- Component Did Mount ----- //
 
   componentDidMount: function() {
     this._loadStoriesFromServer();
   },
 
-  // -------------------------------------
-  //   Render
-  // -------------------------------------
+  // ----- Render ----- //
 
   render: function() {
     return (

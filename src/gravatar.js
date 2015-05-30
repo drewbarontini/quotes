@@ -16,9 +16,13 @@ var md5 = require( 'MD5' );
 
 var Gravatar = React.createClass({
 
+  // ----- Is Default Gravatar ----- //
+
   _isDefaultGravatar: function( gravatar ) {
     return gravatar == 'http://www.gravatar.com/avatar/61792e37c91ef1e56ac90624e5a94f26';
   },
+
+  // ----- Get Gravatar ----- //
 
   _getGravatar: function( email ) {
     var gravatar = 'http://www.gravatar.com/avatar/' + md5( email );
@@ -29,6 +33,8 @@ var Gravatar = React.createClass({
 
     return gravatar;
   },
+
+  // ----- Render ----- //
 
   render: function() {
     return(
