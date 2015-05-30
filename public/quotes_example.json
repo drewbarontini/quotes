@@ -1,0 +1,7 @@
+[
+  { "text": "This is a quote.", "author": "Author Name", "email": "author@example.com" },
+  { "text": "This is a second quote.", "author": "Author Name", "email": "author@example.com" },
+  { "text": "This is a third quote.", "author": "Author Name", "email": "author@example.com" },
+  { "text": "This is a fourth quote.", "author": "Author Name", "email": "author@example.com" },
+  { "text": "This is a fifth quote.", "author": "Author Name", "email": "author@example.com" }
+]
