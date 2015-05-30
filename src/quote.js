@@ -20,18 +20,20 @@ var Quote = React.createClass({
 
   render: function() {
 
+    var quote = this.props.data;
+
     return(
       <div className={ 'quote ' + this.props.cName }>
         <blockquote className='quote-content'>
-          { this.props.data.text }
+          { quote.text }
         </blockquote>
 
         <div className='bucket bucket--flag'>
           <div className='bucket-media'>
-            <Gravatar email={ this.props.data.email } />
+            <Gravatar email={ quote.email } />
           </div>
           <div className='bucket-content'>
-            <h2>{ this.props.data.author }</h2>
+            <h2>{ quote.author }</h2>
           </div>
         </div>
       </div>
