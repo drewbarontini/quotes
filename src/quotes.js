@@ -38,6 +38,7 @@ var Quotes = React.createClass({
 
     } else {
       this.setState({ cName: 'is-last-active' });
+
       setTimeout( function() {
         this._loadStoriesFromServer();
       }.bind( this ), 1000 );
