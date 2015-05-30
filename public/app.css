@@ -53,6 +53,18 @@ blockquote {
 .quote-content {
   font-size: 325%;
   margin-bottom: 0.625em;
+  position: relative;
+}
+
+.quote-content::before {
+  content: '\201C';
+  color: rgba(255, 255, 255, 0.2);
+  display: block;
+  font-size: 150%;
+  font-weight: bold;
+  position: absolute;
+  left: -40px;
+  top: -20px;
 }
 
 .quote-media {
