@@ -17,7 +17,7 @@ var uglify     = require('gulp-uglify');
 //   Task: Browserify
 // -------------------------------------
 
-gulp.task( 'browserify', function() {
+gulp.task( 'build', function() {
 
   gulp.src( 'src/app.js' )
     .pipe( browserify( {
@@ -34,7 +34,7 @@ gulp.task( 'browserify', function() {
 //   Task: Default
 // -------------------------------------
 
-gulp.task( 'default', [ 'browserify' ] );
+gulp.task( 'default', [ 'build' ] );
 
 // -------------------------------------
 //   Task: Watch
