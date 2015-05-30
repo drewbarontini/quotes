@@ -1,22 +1,32 @@
 // *************************************
 //
-//   Application
+//   Quotes
 //
 // *************************************
 
 // -------------------------------------
-//   Quotes
+//   Requires
+// -------------------------------------
+
+var Quote = require( './Quote' );
+
+// -------------------------------------
+//   Base
 // -------------------------------------
 
 var Quotes = React.createClass({
 
-  // ----- Get Initial State ----- //
+  // -------------------------------------
+  //   Get Initial State
+  // -------------------------------------
 
   getInitialState: function() {
     return { data: [] };
   },
 
-  // ----- Get Next Quote ----- //
+  // -------------------------------------
+  //   Get Next Quote
+  // -------------------------------------
 
   _getNextQuote: function() {
     if ( this.state.quotes.length > 0 ) {
@@ -34,7 +44,9 @@ var Quotes = React.createClass({
     }
   },
 
-  // ----- Load Next Quote ----- //
+  // -------------------------------------
+  //   Load Next Quote
+  // -------------------------------------
 
   _loadNextQuote: function( nextQuote ) {
     this.setState({ cName: '', data: nextQuote });
@@ -48,14 +60,18 @@ var Quotes = React.createClass({
     }.bind( this ), 5000 );
   },
 
-  // ----- Hide Last Quote ----- //
+  // -------------------------------------
+  //   Hide Last Quote
+  // -------------------------------------
 
   _hideLastQuote: function( lastQuote ) {
     this.setState({ cName: 'is-last-active', data: lastQuote });
     this._getNextQuote();
   },
 
-  // ----- Load Stories From Server ----- //
+  // -------------------------------------
+  //   Load Stories From Server
+  // -------------------------------------
 
   _loadStoriesFromServer: function() {
     $.getJSON( this.props.url, function( data ) {
@@ -66,13 +82,17 @@ var Quotes = React.createClass({
     }.bind( this ) );
   },
 
-  // ----- Component Did Mount ----- //
+  // -------------------------------------
+  //   Component Did Mount
+  // -------------------------------------
 
   componentDidMount: function() {
     this._loadStoriesFromServer();
   },
 
-  // ----- Render ----- //
+  // -------------------------------------
+  //   Render
+  // -------------------------------------
 
   render: function() {
     return (
@@ -84,36 +104,4 @@ var Quotes = React.createClass({
 
 });
 
-// -------------------------------------
-//   Quote
-// -------------------------------------
-
-var Quote = React.createClass({
-  render: function() {
-    return(
-      <div className={ 'quote ' + this.props.cName }>
-        <blockquote className='quote-content'>
-          { this.props.data.text }
-        </blockquote>
-
-        <div className='bucket bucket--flag'>
-          <div className='bucket-media'>
-            <img className='quote-media' src='http://placecage.com/60/60' />
-          </div>
-          <div className='bucket-content'>
-            <h2>{ this.props.data.author }</h2>
-          </div>
-        </div>
-      </div>
-    );
-  }
-});
-
-// -------------------------------------
-//   Render
-// -------------------------------------
-
-React.render(
-  <Quotes url='quotes.json' />,
-  document.getElementById( 'app' )
-);
+module.exports = Quotes;
