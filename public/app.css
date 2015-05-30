@@ -36,18 +36,18 @@ blockquote {
   opacity: 0;
   position: absolute;
   top: 50%;
-  transform: translate(-50%, 300%);
-  transition: 1s ease-in-out;
+  transform: translate(-50%, 500%);
   width: 600px;
 }
 
 .quote.is-active {
-  opacity: 1;
-  transform: translate(-50%, -50%);
+  animation: upAndIn 1s ease-in-out 1;
+  animation-fill-mode: forwards;
 }
 
 .quote.is-last-active {
-  transform: translate(-50%, -300%);
+  animation: outAndUp 1s ease-in-out 1;
+  animation-fill-mode: forwards;
 }
 
 .quote-content {
@@ -58,4 +58,32 @@ blockquote {
 .quote-media {
   border-radius: 50%;
   display: block;
+}
+
+@keyframes upAndIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 500%);
+  }
+  70% {
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes outAndUp {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  30% {
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -500%);
+  }
 }
