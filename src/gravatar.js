@@ -16,8 +16,18 @@ var md5 = require( 'MD5' );
 
 var Gravatar = React.createClass({
 
+  _isDefaultGravatar: function( gravatar ) {
+    return gravatar == 'http://www.gravatar.com/avatar/61792e37c91ef1e56ac90624e5a94f26';
+  },
+
   _getGravatar: function( email ) {
-    return 'http://www.gravatar.com/avatar/' + md5( email );
+    var gravatar = 'http://www.gravatar.com/avatar/' + md5( email );
+
+    if ( this._isDefaultGravatar( gravatar ) ) {
+      return 'http://lorempixel.com/60/60/food/';
+    }
+
+    return gravatar;
   },
 
   render: function() {
