@@ -2,3 +2,4 @@
 node_modules/
 Rakefile
 quotes.json
+rsync_excludes.txt
