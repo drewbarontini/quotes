@@ -1,0 +1,61 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:300,700');
+
+body {
+  background: #1c1e1f;
+  color: white;
+  font-family: "Lato";
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.bucket {
+  display: flex;
+}
+
+.bucket--flag {
+  align-items: center;
+}
+
+.bucket-content {
+  flex-grow: 1;
+}
+
+.bucket-media {
+  margin-right: 1.25em;
+}
+
+.bucket-media > img {
+  display: block;
+}
+
+.quote {
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 300%);
+  transition: 1s ease-in-out;
+  width: 400px;
+}
+
+.quote.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.quote.is-last-active {
+  transform: translate(-50%, -300%);
+}
+
+.quote-content {
+  font-size: 225%;
+  margin-bottom: 0.625em;
+}
+
+.quote-media {
+  border-radius: 50%;
+  display: block;
+}
