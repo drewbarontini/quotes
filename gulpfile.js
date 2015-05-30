@@ -19,7 +19,7 @@ var uglify     = require('gulp-uglify');
 
 gulp.task( 'browserify', function() {
 
-  gulp.src( 'app.js' )
+  gulp.src( 'src/app.js' )
     .pipe( browserify( {
       debug: true,
       transform: [ 'reactify' ]
@@ -41,5 +41,5 @@ gulp.task( 'default', [ 'browserify' ] );
 // -------------------------------------
 
 gulp.task( 'watch', function() {
-  gulp.watch( 'app.js', [ 'default' ] );
+  gulp.watch( 'src/app.js', [ 'default' ] );
 } );
