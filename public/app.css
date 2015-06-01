@@ -4,6 +4,7 @@ body {
   background: #1c1e1f;
   color: white;
   font-family: "Lato";
+  overflow: hidden;
 }
 
 blockquote {
