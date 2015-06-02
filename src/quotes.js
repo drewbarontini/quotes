@@ -8,6 +8,7 @@
 //   Requires
 // -------------------------------------
 
+var React   = require( 'react' );
 var Quote   = require( './Quote' );
 
 // -------------------------------------

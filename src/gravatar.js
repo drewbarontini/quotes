@@ -8,7 +8,8 @@
 //   Requires
 // -------------------------------------
 
-var md5 = require( 'MD5' );
+var React = require( 'react' );
+var md5   = require( 'MD5' );
 
 // -------------------------------------
 //   Base

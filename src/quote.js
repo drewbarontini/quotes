@@ -8,6 +8,7 @@
 //   Requires
 // -------------------------------------
 
+var React    = require( 'react' );
 var Gravatar = require( './Gravatar' );
 
 // -------------------------------------
