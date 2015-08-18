@@ -29,7 +29,7 @@ var Gravatar = React.createClass({
     var gravatar = 'http://www.gravatar.com/avatar/' + md5( email );
 
     if ( this._isDefaultGravatar( gravatar ) ) {
-      return 'http://lorempixel.com/60/60/food/';
+      return 'https://unsplash.it/60';
     }
 
     return gravatar;
